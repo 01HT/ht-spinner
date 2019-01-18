@@ -27,8 +27,8 @@ class HTSpinner extends LitElement {
     }
 
     :host([button]) paper-spinner {
-      width: 32px;
-      height: 32px;
+      width: 36px;
+      height: 36px;
       margin-right: 8px;
     }
 

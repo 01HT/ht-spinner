@@ -1,12 +1,9 @@
 "use strict";
-import { LitElement, html } from "@polymer/lit-element";
+import { LitElement, html, css } from "lit-element";
 import "@polymer/paper-spinner/paper-spinner.js";
 
 class HTSpinner extends LitElement {
-  render() {
-    const { text } = this;
-    return html`
-    <style>
+  static styles = css`<style>
     :host {
       display: block;
       position: relative;
@@ -66,17 +63,17 @@ class HTSpinner extends LitElement {
       font-weight: 400;
       color:var(--secondary-text-color);
     }
-    </style>
+    </style>`;
+
+  render() {
+    const { text } = this;
+    return html`
     <div id="container">
       <div id="spinner">
         <paper-spinner active></paper-spinner>
         ${text ? html`<div id="text">${text}</div>` : ""}
       </div>
     </div>`;
-  }
-
-  static get is() {
-    return "ht-spinner";
   }
 
   static get properties() {
@@ -86,4 +83,4 @@ class HTSpinner extends LitElement {
   }
 }
 
-customElements.define(HTSpinner.is, HTSpinner);
+customElements.define("ht-spinner", HTSpinner);
